@@ -12,7 +12,7 @@ npm install --save @mels/react-components
 
 ## Usage
 
-```tsx
+```js
 import React, { Component } from 'react';
 import { HelloWorld } from '@mels/react-components';
 
