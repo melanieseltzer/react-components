@@ -1,5 +1,11 @@
 import React, { ReactElement } from 'react';
 
-const HelloWorld = (): ReactElement<any> => <div>Hello world!</div>;
+interface Props {
+  name: string;
+}
+
+const HelloWorld = ({ name }: Props): ReactElement<any> => (
+  <div>Hello {name}!</div>
+);
 
 export default HelloWorld;
