@@ -1,1 +1,3 @@
-export { default as HelloWorld } from './HelloWorld';
+export { FloatingLabel } from './FloatingLabel';
+export { Input } from './Input';
+export { Label } from './Label';
