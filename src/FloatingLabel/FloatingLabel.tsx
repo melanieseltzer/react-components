@@ -9,7 +9,7 @@ const StyledFloatingLabel = styled.div`
   }
 `;
 
-export const FloatingLabel = (props: FloatingLabel): ReactNode => {
+const FloatingLabel = (props: FloatingLabel): ReactNode => {
   const { children } = props;
 
   // Using the React.Children.map utility, we can map over each child and assign the float
@@ -29,3 +29,5 @@ export const FloatingLabel = (props: FloatingLabel): ReactNode => {
 
   return <StyledFloatingLabel>{childrenWithProps}</StyledFloatingLabel>;
 };
+
+export default FloatingLabel;

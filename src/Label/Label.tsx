@@ -5,7 +5,7 @@ interface Props {
   float?: boolean;
 }
 
-export const Label = (props: Label): ReactNode => {
+const Label = (props: Label): ReactNode => {
   const { children } = props;
   return <StyledLabel {...props}>{children}</StyledLabel>;
 };
@@ -24,3 +24,5 @@ const StyledLabel = styled.label`
       left: 0;
     `}
 `;
+
+export default Label;

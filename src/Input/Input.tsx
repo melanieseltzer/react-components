@@ -5,7 +5,7 @@ interface Props {
   float?: boolean;
 }
 
-export const Input = (props: Input): ReactNode => <StyledInput {...props} />;
+const Input = (props: Input): ReactNode => <StyledInput {...props} />;
 
 const StyledInput = styled.input`
   background: #f3f3f3;
@@ -51,3 +51,5 @@ const StyledInput = styled.input`
       }
     `}
 `;
+
+export default Input;

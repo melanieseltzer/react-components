@@ -1,1 +1,1 @@
-export { FloatingLabel } from './FloatingLabel';
+export { default } from './FloatingLabel';
