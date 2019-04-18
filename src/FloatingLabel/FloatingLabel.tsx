@@ -1,15 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
-const StyledFloatingLabel = styled.div`
-  position: relative;
-  flex-basis: 100%;
-  @media (min-width: 768px) {
-    flex-basis: 49%;
-  }
-`;
-
-const FloatingLabel = (props: FloatingLabel): ReactNode => {
+const FloatingLabel = (props: FloatingLabelProps): ReactNode => {
   const { children } = props;
 
   // Using the React.Children.map utility, we can map over each child and assign the float
@@ -29,5 +21,13 @@ const FloatingLabel = (props: FloatingLabel): ReactNode => {
 
   return <StyledFloatingLabel>{childrenWithProps}</StyledFloatingLabel>;
 };
+
+const StyledFloatingLabel = styled.div`
+  position: relative;
+  flex-basis: 100%;
+  @media (min-width: 768px) {
+    flex-basis: 49%;
+  }
+`;
 
 export default FloatingLabel;

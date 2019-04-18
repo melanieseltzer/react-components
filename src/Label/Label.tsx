@@ -1,11 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
-interface Props {
-  float?: boolean;
-}
-
-const Label = (props: Label): ReactNode => {
+const Label = (props: LabelProps): ReactNode => {
   const { children } = props;
   return <StyledLabel {...props}>{children}</StyledLabel>;
 };
@@ -16,7 +12,7 @@ const StyledLabel = styled.label`
   transition: all 0.2s;
   color: #8e2de2;
   /* Leverage props when used in context of floating label */
-  ${(props: Props) =>
+  ${(props: StyledProps) =>
     props.float &&
     `
       position: absolute;

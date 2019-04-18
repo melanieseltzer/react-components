@@ -1,11 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
-interface Props {
-  float?: boolean;
-}
-
-const Input = (props: Input): ReactNode => <StyledInput {...props} />;
+const Input = (props: InputProps): ReactNode => <StyledInput {...props} />;
 
 const StyledInput = styled.input`
   background: #f3f3f3;
@@ -17,9 +13,9 @@ const StyledInput = styled.input`
   width: 100%;
   transition: all 0.2s;
   /* Top padding for the placeholder to sit properly when floated */
-  padding: ${(props: Props) =>
+  padding: ${(props: StyledProps) =>
     props.float ? '2rem 1rem 1rem 1rem' : '0 1rem'};
-  ${(props: Props) =>
+  ${(props: StyledProps) =>
     props.float &&
     `
       &:hover {
