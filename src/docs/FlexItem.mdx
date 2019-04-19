@@ -1,0 +1,33 @@
+---
+name: Flex Item
+menu: Components
+route: /flex-item
+---
+
+import { Playground, Props } from 'docz';
+import Flex from '../components/Flex/Flex';
+import FlexItem from '../components/FlexItem/FlexItem';
+
+# FlexItem
+
+An abstraction over a Flexbox child.
+
+## Props
+
+<Props of={FlexItem} />
+
+## Usage
+
+<Playground>
+  <Flex direction="column">
+    <FlexItem background="red" alignSelf="center" order={2}>
+      Hi
+    </FlexItem>
+    <FlexItem background="red" alignSelf="center" order={3}>
+      Hi
+    </FlexItem>
+    <FlexItem background="red" alignSelf="center" order={1}>
+      I appear first
+    </FlexItem>
+  </Flex>
+</Playground>

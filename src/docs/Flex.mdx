@@ -1,0 +1,27 @@
+---
+name: Flex
+menu: Components
+route: /flex
+---
+
+import { Playground, Props } from 'docz';
+import Flex from '../components/Flex/Flex';
+import FlexItem from '../components/FlexItem/FlexItem';
+
+# Flex
+
+An abstraction over a Flexbox 🚀 Defines a flex container (enables flex for all direct children).
+
+## Props
+
+<Props of={Flex} />
+
+## Usage
+
+<Playground>
+  <Flex justifyContent="space-around">
+    <FlexItem background="red">Hi</FlexItem>
+    <FlexItem background="red">hi</FlexItem>
+    <FlexItem background="red">hi</FlexItem>
+  </Flex>
+</Playground>
