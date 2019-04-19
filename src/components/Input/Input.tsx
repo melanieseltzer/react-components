@@ -1,24 +1,24 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 export interface Input extends React.InputHTMLAttributes<HTMLInputElement> {
+  background?: string;
   border?: number;
   color?: string;
   width?: string;
 }
 
-interface Props {
-  color?: string;
-  border?: number;
+interface Props extends Input {
   float?: boolean;
-  width?: string;
 }
 
-const Input = (props: Input): ReactNode => <StyledInput {...props} />;
+const Input = (props: Input): JSX.Element => <StyledInput {...props} />;
 
 export default Input;
 
 const StyledInput = styled.input`
+  ${(props: Props) =>
+    props.background ? `background: ${props.background}` : 'none'};
   border: 0;
   border-bottom: ${(props: Props) => `${props.border ? props.border : 1}px solid
     ${props.color ? props.color : `#ccc`}`};

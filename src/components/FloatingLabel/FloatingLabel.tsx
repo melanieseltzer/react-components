@@ -7,7 +7,7 @@ export interface FloatingLabel {
   color?: string;
 }
 
-const FloatingLabel = (props: FloatingLabel): ReactNode => {
+const FloatingLabel = (props: FloatingLabel): JSX.Element => {
   const { children, color, border } = props;
 
   // Using the React.Children.map utility, we can map over each child and assign the float

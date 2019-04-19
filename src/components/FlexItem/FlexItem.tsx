@@ -17,7 +17,7 @@ export interface FlexItem {
     | 'stretch';
 }
 
-const FlexItem = (props: FlexItem): ReactNode => (
+const FlexItem = (props: FlexItem): JSX.Element => (
   <StyledFlexItem {...props}>{props.children}</StyledFlexItem>
 );
 
