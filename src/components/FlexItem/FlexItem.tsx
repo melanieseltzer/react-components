@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
 export interface FlexItem {
+  className?: string;
   children: ReactNode;
   background?: string;
   order?: number;
@@ -17,9 +18,15 @@ export interface FlexItem {
     | 'stretch';
 }
 
-const FlexItem = (props: FlexItem): JSX.Element => (
-  <StyledFlexItem {...props}>{props.children}</StyledFlexItem>
-);
+const FlexItem = (props: FlexItem): JSX.Element => {
+  const { className, children } = props;
+
+  return (
+    <StyledFlexItem className={className} {...props}>
+      {children}
+    </StyledFlexItem>
+  );
+};
 
 export default FlexItem;
 

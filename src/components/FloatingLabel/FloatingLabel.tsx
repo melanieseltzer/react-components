@@ -5,10 +5,11 @@ export interface FloatingLabel {
   border?: number;
   children: ReactNode;
   color?: string;
+  className?: string;
 }
 
 const FloatingLabel = (props: FloatingLabel): JSX.Element => {
-  const { children, color, border } = props;
+  const { className, children, color, border } = props;
 
   // Using the React.Children.map utility, we can map over each child and assign the float
   // prop to each one using React.cloneElement, which we can then leverage for styling in
@@ -27,7 +28,11 @@ const FloatingLabel = (props: FloatingLabel): JSX.Element => {
     }
   );
 
-  return <StyledFloatingLabel>{childrenWithProps}</StyledFloatingLabel>;
+  return (
+    <StyledFloatingLabel className={className}>
+      {childrenWithProps}
+    </StyledFloatingLabel>
+  );
 };
 
 export default FloatingLabel;
