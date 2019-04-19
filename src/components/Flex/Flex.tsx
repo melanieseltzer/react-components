@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
 export interface Flex {
+  className?: string;
   children: ReactNode;
   background?: string;
   direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
@@ -24,9 +25,13 @@ export interface Flex {
 }
 
 const Flex = (props: Flex): JSX.Element => {
-  const { children } = props;
+  const { className, children } = props;
 
-  return <StyledFlex {...props}>{children}</StyledFlex>;
+  return (
+    <StyledFlex className={className} {...props}>
+      {children}
+    </StyledFlex>
+  );
 };
 
 export default Flex;

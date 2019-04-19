@@ -12,8 +12,13 @@ interface Props extends Label {
 }
 
 const Label = (props: Label): JSX.Element => {
-  const { children } = props;
-  return <StyledLabel {...props}>{children}</StyledLabel>;
+  const { className, children } = props;
+
+  return (
+    <StyledLabel className={className} {...props}>
+      {children}
+    </StyledLabel>
+  );
 };
 
 export default Label;

@@ -12,7 +12,9 @@ interface Props extends Input {
   float?: boolean;
 }
 
-const Input = (props: Input): JSX.Element => <StyledInput {...props} />;
+const Input = (props: Input): JSX.Element => (
+  <StyledInput className={props.className} {...props} />
+);
 
 export default Input;
 
