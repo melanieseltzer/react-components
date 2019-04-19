@@ -1,0 +1,54 @@
+---
+name: Input and Label
+route: /input-label
+---
+
+import { Playground, Props } from 'docz';
+import Input from '../Input';
+import Label from '../Label';
+
+# Input and Label
+
+A label with an associated input.
+
+## Props
+
+<Props of={Input} />
+<Props of={Label} />
+
+## Basic usage
+
+Label above input:
+
+<Playground>
+  <form>
+    <Label htmlFor="email" color="tomato">
+      Email
+    </Label>
+    <Input
+      id="email"
+      name="email"
+      placeholder="hi@example.com"
+      color="tomato"
+      width="100%"
+      // onChange={...}
+    />
+  </form>
+</Playground>
+
+Label next to input:
+
+<Playground>
+  <form>
+    <Label htmlFor="email" color="tomato">
+      Email
+    </Label>
+    <Input
+      id="email"
+      name="email"
+      placeholder="hi@example.com"
+      color="tomato"
+      // onChange={...}
+    />
+  </form>
+</Playground>

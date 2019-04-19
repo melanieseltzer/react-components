@@ -1,8 +1,14 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
-const FloatingLabel = (props: FloatingLabelProps): ReactNode => {
-  const { children } = props;
+interface FloatingLabel {
+  border?: number;
+  children: ReactNode;
+  color?: string;
+}
+
+const FloatingLabel = (props: FloatingLabel): ReactNode => {
+  const { children, color, border } = props;
 
   // Using the React.Children.map utility, we can map over each child and assign the float
   // prop to each one using React.cloneElement, which we can then leverage for styling in
@@ -14,7 +20,9 @@ const FloatingLabel = (props: FloatingLabelProps): ReactNode => {
     children,
     (child: React.ReactElement<any>): ReactNode => {
       return React.cloneElement(child, {
-        float: true
+        float: true,
+        color,
+        border
       });
     }
   );
@@ -22,12 +30,8 @@ const FloatingLabel = (props: FloatingLabelProps): ReactNode => {
   return <StyledFloatingLabel>{childrenWithProps}</StyledFloatingLabel>;
 };
 
+export default FloatingLabel;
+
 const StyledFloatingLabel = styled.div`
   position: relative;
-  flex-basis: 100%;
-  @media (min-width: 768px) {
-    flex-basis: 49%;
-  }
 `;
-
-export default FloatingLabel;
