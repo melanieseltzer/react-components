@@ -1,8 +1,12 @@
-# @mels/react-components
+<div align="center"><img src="https://github.com/melanieseltzer/react-components/blob/master/public/iconfinder_12-Computer_3213278.png?raw=true" width="70" alt="mels react components" /></div>
+
+<h1 align="center">@mels/react-components</h1>
+
+![CircleCI (all branches)](https://img.shields.io/circleci/project/github/melanieseltzer/react-components.svg) [![npm (scoped)](https://img.shields.io/npm/v/@mels/react-components.svg)](https://www.npmjs.com/package/@mels/react-components) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 > A collection of some of my frequently used React components.
 
-![CircleCI (all branches)](https://img.shields.io/circleci/project/github/melanieseltzer/react-components.svg) [![npm (scoped)](https://img.shields.io/npm/v/@mels/react-components.svg)](https://www.npmjs.com/package/@mels/react-components) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+This is my attempt at centralizing some of my most repeated components across all of my various side projects and tinkerings 😁
 
 ## Install
 
@@ -10,18 +14,31 @@
 npm install --save @mels/react-components
 ```
 
+## Docz documentation
+
+https://mels-react-components.netlify.com
+
 ## Usage
 
 ```js
 import React, { Component } from 'react';
-import { HelloWorld } from '@mels/react-components';
+import { Input, Label } from '@mels/react-components';
 
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <HelloWorld />
-      </div>
+      <form>
+        <Label htmlFor="email" color="tomato">
+          Email
+        </Label>
+        <Input
+          id="email"
+          name="email"
+          placeholder="hi@example.com"
+          color="tomato"
+          // ...
+        />
+      </form>
     );
   }
 }

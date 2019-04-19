@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
-interface FloatingLabel {
+export interface FloatingLabel {
   border?: number;
-  children: ReactNode;
+  children: React.ReactNode;
   color?: string;
 }
 

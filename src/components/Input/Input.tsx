@@ -5,10 +5,9 @@ export interface Input extends React.InputHTMLAttributes<HTMLInputElement> {
   border?: number;
   color?: string;
   width?: string;
-  placeholder?: string;
 }
 
-interface StyledProps {
+interface Props {
   color?: string;
   border?: number;
   float?: boolean;
@@ -21,15 +20,15 @@ export default Input;
 
 const StyledInput = styled.input`
   border: 0;
-  border-bottom: ${({ border, color }: StyledProps) =>
-    `${border ? border : 1}px solid ${color ? color : `#ccc`}`};
+  border-bottom: ${(props: Props) => `${props.border ? props.border : 1}px solid
+    ${props.color ? props.color : `#ccc`}`};
   font-size: 1rem;
   height: auto;
   transition: all 0.2s;
   padding: 0.8rem 0 0.5rem 0;
-  ${({ width }: StyledProps) => width && `width: ${width}`};
-  ${({ float }: StyledProps) =>
-    float &&
+  ${(props: Props) => props.width && `width: ${props.width}`};
+  ${(props: Props) =>
+    props.float &&
     `
       /* normal label size (when placeholder is there but hidden aka not focused) */
       :placeholder-shown + label {

@@ -4,7 +4,7 @@ export default {
   codeSandbox: true,
   typescript: true,
   public: './public',
-  menu: ['Getting Started', 'Input and Label', 'Input with floating label'],
+  menu: ['Getting Started', 'Components'],
   themeConfig: {
     colors: {
       primary: '#49AAEE'

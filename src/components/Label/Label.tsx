@@ -2,12 +2,15 @@ import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
 export interface Label extends React.InputHTMLAttributes<HTMLLabelElement> {
-  border?: number;
   color?: string;
+  width?: string;
 }
 
-interface StyledProps {
+interface Props {
+  color?: string;
+  border?: number;
   float?: boolean;
+  width?: string;
 }
 
 const Label = (props: Label): ReactNode => {
@@ -20,10 +23,10 @@ export default Label;
 const StyledLabel = styled.label`
   font-size: 1rem;
   transition: all 0.2s;
-  color: ${({ color }) => (color ? color : '#222')};
+  color: ${(props: Props) => (props.color ? props.color : '#222')};
   /* Leverage props when used in context of floating label */
-  ${({ float }: StyledProps) =>
-    float &&
+  ${(props: Props) =>
+    props.float &&
     `
       position: absolute;
       top: 0;
