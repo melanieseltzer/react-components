@@ -17,8 +17,8 @@ const Input = (props: Input): JSX.Element => <StyledInput {...props} />;
 export default Input;
 
 const StyledInput = styled.input`
-  ${(props: Props) =>
-    props.background ? `background: ${props.background}` : 'none'};
+  background: ${(props: Props) =>
+    props.background ? props.background : 'none'};
   border: 0;
   border-bottom: ${(props: Props) => `${props.border ? props.border : 1}px solid
     ${props.color ? props.color : `#ccc`}`};
