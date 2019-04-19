@@ -23,7 +23,7 @@ export interface Flex {
     | 'stretch';
 }
 
-const Flex = (props: Flex): ReactNode => {
+const Flex = (props: Flex): JSX.Element => {
   const { children } = props;
 
   return <StyledFlex {...props}>{children}</StyledFlex>;

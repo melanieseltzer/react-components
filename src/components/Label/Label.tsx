@@ -1,19 +1,17 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 export interface Label extends React.InputHTMLAttributes<HTMLLabelElement> {
   color?: string;
+  htmlFor?: string;
   width?: string;
 }
 
-interface Props {
-  color?: string;
-  border?: number;
+interface Props extends Label {
   float?: boolean;
-  width?: string;
 }
 
-const Label = (props: Label): ReactNode => {
+const Label = (props: Label): JSX.Element => {
   const { children } = props;
   return <StyledLabel {...props}>{children}</StyledLabel>;
 };
