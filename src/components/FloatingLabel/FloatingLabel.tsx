@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export interface FloatingLabel {
   border?: number;
-  children: React.ReactNode;
+  children: ReactNode;
   color?: string;
 }
 
