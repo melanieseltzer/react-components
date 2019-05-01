@@ -28,9 +28,9 @@ export interface FlexProps {
     | 'stretch';
 }
 
-//(props: Flex): JSX.Element
 class Flex extends Component<FlexProps> {
   public static Item = FlexItem;
+
   public render() {
     const { props } = this;
     const { className, children } = props;
