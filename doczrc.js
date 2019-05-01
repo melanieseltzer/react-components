@@ -1,8 +1,11 @@
+import doczPluginNetlify from 'docz-plugin-netlify';
+
 export default {
   title: 'React Components',
   theme: 'docz-theme-default',
   codeSandbox: true,
   typescript: true,
+  plugins: [doczPluginNetlify()],
   public: './public',
   menu: ['Getting Started', 'Components'],
   themeConfig: {
