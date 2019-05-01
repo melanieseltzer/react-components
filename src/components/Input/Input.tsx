@@ -14,7 +14,7 @@ export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input = (props: Props) => {
-  const { color = '#ccc', border = 1, className } = props;
+  const { color = '#ccc', border = 0, className } = props;
 
   return (
     <InputWrapper
@@ -31,6 +31,8 @@ const InputWrapper = styled.input`
     props.background ? props.background : 'none'};
   border: 0;
   ${(props: Props) =>
+    props.border &&
+    props.border > 0 &&
     `border${props.borderBottom ? '-bottom' : ''}: ${props.border}px solid ${
       props.color
     }`};
@@ -43,7 +45,7 @@ const InputWrapper = styled.input`
     `
       /* normal label size (when placeholder is there but hidden aka not focused) */
       :placeholder-shown + label {
-        transform: translate(0.2rem, 0.5rem) scale(1);
+        transform: translate(0.3rem, 0.5rem) scale(1);
       }
       /* when not focused, hide the placeholder */
       :placeholder-shown:not(:focus)::placeholder,
@@ -62,7 +64,7 @@ const InputWrapper = styled.input`
       :focus + label {
         padding-top: 0.2rem;
         transform-origin: left top;
-        transform: translate(0.2rem, -0.2rem) scale(0.8);
+        transform: translate(0.3rem, -0.2rem) scale(0.8);
       }
     `}
 `;
