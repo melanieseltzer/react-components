@@ -4,6 +4,8 @@ import styled from 'styled-components';
 export interface FlexItem {
   className?: string;
   children: ReactNode;
+  height?: string;
+  width?: string;
   background?: string;
   order?: number;
   grow?: number;
@@ -31,6 +33,8 @@ const FlexItem = (props: FlexItem): JSX.Element => {
 export default FlexItem;
 
 const StyledFlexItem = styled.div`
+  ${(props: FlexItem) => props.height && `height: ${props.height}`}
+  ${(props: FlexItem) => props.width && `width: ${props.width}`}
   ${(props: FlexItem) => props.background && `background: ${props.background}`}
   ${(props: FlexItem) => props.order && `order: ${props.order}`}
   ${(props: FlexItem) => props.grow && `flex-grow: ${props.grow}`}
