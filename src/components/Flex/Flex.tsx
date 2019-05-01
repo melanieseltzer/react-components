@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import FlexItem from './FlexItem';
 
-export interface FlexProps {
+export interface Props {
   className?: string;
   children: ReactNode;
   height?: string;
@@ -28,7 +28,7 @@ export interface FlexProps {
     | 'stretch';
 }
 
-class Flex extends Component<FlexProps> {
+class Flex extends Component<Props> {
   public static Item = FlexItem;
 
   public render() {
@@ -43,20 +43,18 @@ class Flex extends Component<FlexProps> {
   }
 }
 
-export default Flex;
-
 const FlexWrapper = styled.div`
   display: flex;
-  ${(props: FlexProps) => props.height && `height: ${props.height}`}
-  ${(props: FlexProps) => props.width && `width: ${props.width}`}
-  ${(props: FlexProps) => props.background && `background: ${props.background}`}
-  ${(props: FlexProps) =>
-    props.direction && `flex-direction: ${props.direction}`}
-  ${(props: FlexProps) => props.wrap && `flex-wrap: ${props.wrap}`}
-  ${(props: FlexProps) =>
+  ${(props: Props) => props.height && `height: ${props.height}`}
+  ${(props: Props) => props.width && `width: ${props.width}`}
+  ${(props: Props) => props.background && `background: ${props.background}`}
+  ${(props: Props) => props.direction && `flex-direction: ${props.direction}`}
+  ${(props: Props) => props.wrap && `flex-wrap: ${props.wrap}`}
+  ${(props: Props) =>
     props.justifyContent && `justify-content: ${props.justifyContent}`}
-  ${(props: FlexProps) =>
-    props.alignItems && `align-items: ${props.alignItems}`}
-  ${(props: FlexProps) =>
+  ${(props: Props) => props.alignItems && `align-items: ${props.alignItems}`}
+  ${(props: Props) =>
     props.alignContent && `align-content: ${props.alignContent}`}
 `;
+
+export default Flex;

@@ -1,41 +1,49 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export interface Input extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   background?: string;
   border?: number;
+  borderBottom?: boolean;
   color?: string;
   width?: string;
-}
-
-interface Props extends Input {
+  /** float prop is passed from Floating and not meant to be used explicitely */
   float?: boolean;
+  /** Pass it any class to extend styling */
+  className?: string;
 }
 
-const Input = (props: Input): JSX.Element => (
-  <StyledInput className={props.className} {...props} />
-);
+const Input = (props: Props) => {
+  const { color = '#ccc', border = 1, className } = props;
 
-export default Input;
+  return (
+    <InputWrapper
+      border={border}
+      color={color}
+      className={className}
+      {...props}
+    />
+  );
+};
 
-const StyledInput = styled.input`
+const InputWrapper = styled.input`
   background: ${(props: Props) =>
     props.background ? props.background : 'none'};
   border: 0;
-  border-bottom: ${(props: Props) => `${props.border ? props.border : 1}px solid
-    ${props.color ? props.color : `#ccc`}`};
-  font-size: 1rem;
-  height: auto;
+  ${(props: Props) =>
+    `border${props.borderBottom ? '-bottom' : ''}: ${props.border}px solid ${
+      props.color
+    }`};
   transition: all 0.2s;
-  padding: 0.8rem 0 0.5rem 0;
+  padding: ${(props: Props) =>
+    props.float ? '1rem 0.3rem 0.5rem 0.3rem' : '0.5rem'};
   ${(props: Props) => props.width && `width: ${props.width}`};
   ${(props: Props) =>
     props.float &&
     `
       /* normal label size (when placeholder is there but hidden aka not focused) */
       :placeholder-shown + label {
-        transform-origin: left bottom;
-        transform: translate(0, 0.4rem) scale(1);
+        transform: translate(0.2rem, 0.5rem) scale(1);
       }
       /* when not focused, hide the placeholder */
       :placeholder-shown:not(:focus)::placeholder,
@@ -53,7 +61,10 @@ const StyledInput = styled.input`
       :not(:placeholder-shown) + label,
       :focus + label {
         padding-top: 0.2rem;
-        transform: translate(0, -0.7rem) scale(0.8);
+        transform-origin: left top;
+        transform: translate(0.2rem, -0.2rem) scale(0.8);
       }
     `}
 `;
+
+export default Input;
