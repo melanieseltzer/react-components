@@ -5,9 +5,7 @@ route: /floating-label-input
 ---
 
 import { Playground, Props } from 'docz';
-import FloatingLabel from '../components/FloatingLabel/FloatingLabel';
-import Input from '../components/Input/Input';
-import Label from '../components/Label/Label';
+import Floating from '../components/Floating/Floating';
 
 # Input with floating label
 
@@ -15,13 +13,22 @@ A text label which sits inside the input field at full font-size. When the input
 
 ## Props
 
-<Props of={FloatingLabel} />
+<Props of={Floating} />
 
 ## Basic usage
 
 <Playground>
-  <FloatingLabel color="tomato" border={2}>
-    <Input id="email" name="email" placeholder="hi@example.com" />
-    <Label htmlFor="email">Email</Label>
-  </FloatingLabel>
+  <Floating>
+    <Floating.Input
+      id="name"
+      name="name"
+      placeholder="John Smith"
+      color="tomato"
+      border={1}
+      borderBottom
+    />
+    <Floating.Label htmlFor="name" color="tomato">
+      Name
+    </Floating.Label>
+  </Floating>
 </Playground>

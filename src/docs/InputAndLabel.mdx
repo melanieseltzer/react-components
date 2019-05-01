@@ -28,16 +28,16 @@ Label above input:
 
 <Playground>
   <form>
-    <Label htmlFor="email" color="tomato">
-      Email
+    <Label className="custom-class" htmlFor="name">
+      Name
     </Label>
     <Input
-      id="email"
-      name="email"
-      placeholder="hi@example.com"
-      color="tomato"
+      className="custom-class"
+      id="name"
+      name="name"
+      placeholder="John Smith"
       width="100%"
-      // onChange={...}
+      border={1}
     />
   </form>
 </Playground>
@@ -46,14 +46,17 @@ Label next to input:
 
 <Playground>
   <form>
-    <Label htmlFor="email" color="tomato">
-      Email
+    <Label className="custom-class" htmlFor="name2" color="tomato">
+      Name
     </Label>
     <Input
-      id="email"
-      name="email"
-      placeholder="hi@example.com"
+      className="custom-class"
+      id="name2"
+      name="name2"
+      placeholder="John Smith"
       color="tomato"
+      border={1}
+      borderBottom
       // onChange={...}
     />
   </form>

@@ -1,32 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export interface Label extends React.InputHTMLAttributes<HTMLLabelElement> {
+export interface Props extends React.InputHTMLAttributes<HTMLLabelElement> {
   color?: string;
   htmlFor?: string;
   width?: string;
-}
-
-interface Props extends Label {
+  /** float prop is passed from Floating and not meant to be used explicitely */
   float?: boolean;
+  /** Pass it any class to extend styling */
+  className?: string;
 }
 
-const Label = (props: Label): JSX.Element => {
-  const { className, children } = props;
+const Label = (props: Props) => {
+  const { color = '#aaa', children, className } = props;
 
   return (
-    <StyledLabel className={className} {...props}>
+    <LabelWrapper color={color} className={className} {...props}>
       {children}
-    </StyledLabel>
+    </LabelWrapper>
   );
 };
 
-export default Label;
-
-const StyledLabel = styled.label`
-  font-size: 1rem;
+const LabelWrapper = styled.label`
   transition: all 0.2s;
-  color: ${(props: Props) => (props.color ? props.color : '#222')};
+  color: ${(props: Props) => props.color};
   /* Leverage props when used in context of floating label */
   ${(props: Props) =>
     props.float &&
@@ -39,3 +36,5 @@ const StyledLabel = styled.label`
       }
     `}
 `;
+
+export default Label;

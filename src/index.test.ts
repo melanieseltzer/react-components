@@ -1,7 +1,7 @@
-import { FloatingLabel } from '.';
+import { Floating } from '.';
 
-describe('FloatingLabel component', () => {
+describe('Floating component', () => {
   it('is truthy', () => {
-    expect(FloatingLabel).toBeTruthy();
+    expect(Floating).toBeTruthy();
   });
 });

@@ -8,6 +8,8 @@
 
 This is my attempt at centralizing some of my most repeated components across all of my various side projects and tinkerings 😁
 
+_NOTE: This is still a pretty early work in progress! Expect bugs and API changes 🐛_
+
 ## Install
 
 ```bash

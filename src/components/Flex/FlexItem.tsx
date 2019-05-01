@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
-export interface FlexItem {
+export interface Props {
   className?: string;
   children: ReactNode;
   height?: string;
@@ -20,7 +20,7 @@ export interface FlexItem {
     | 'stretch';
 }
 
-const FlexItem = (props: FlexItem): JSX.Element => {
+const FlexItem = (props: Props) => {
   const { className, children } = props;
 
   return (
@@ -30,15 +30,15 @@ const FlexItem = (props: FlexItem): JSX.Element => {
   );
 };
 
-export default FlexItem;
-
 const StyledFlexItem = styled.div`
-  ${(props: FlexItem) => props.height && `height: ${props.height}`}
-  ${(props: FlexItem) => props.width && `width: ${props.width}`}
-  ${(props: FlexItem) => props.background && `background: ${props.background}`}
-  ${(props: FlexItem) => props.order && `order: ${props.order}`}
-  ${(props: FlexItem) => props.grow && `flex-grow: ${props.grow}`}
-  ${(props: FlexItem) => props.shrink && `flex-shrink: ${props.shrink}`}
-  ${(props: FlexItem) => props.basis && `flex-basis: ${props.basis}`}
-  ${(props: FlexItem) => props.alignSelf && `align-self: ${props.alignSelf}`}
+  ${(props: Props) => props.height && `height: ${props.height}`}
+  ${(props: Props) => props.width && `width: ${props.width}`}
+  ${(props: Props) => props.background && `background: ${props.background}`}
+  ${(props: Props) => props.order && `order: ${props.order}`}
+  ${(props: Props) => props.grow && `flex-grow: ${props.grow}`}
+  ${(props: Props) => props.shrink && `flex-shrink: ${props.shrink}`}
+  ${(props: Props) => props.basis && `flex-basis: ${props.basis}`}
+  ${(props: Props) => props.alignSelf && `align-self: ${props.alignSelf}`}
 `;
+
+export default FlexItem;
