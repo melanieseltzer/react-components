@@ -1,4 +1,4 @@
-<div align="center"><img src="https://github.com/melanieseltzer/react-components/blob/master/public/iconfinder_12-Computer_3213278.png?raw=true" width="70" alt="mels react components" /></div>
+<div align="center"><a href="https://www.iconfinder.com/icons/3213278/computer_creative_media_photo_icon" target="_blank"><img src="https://github.com/melanieseltzer/react-components/blob/master/public/iconfinder_12-Computer_3213278.png?raw=true" width="70" alt="mels react components" /></a></div>
 
 <h1 align="center">@mels/react-components</h1>
 
@@ -46,6 +46,7 @@ export default class App extends Component {
 
 ## Thanks ❤️
 
+- [Icon logo from IconFinder](https://www.iconfinder.com/icons/3213278/computer_creative_media_photo_icon)
 - [create-react-library](https://github.com/transitive-bullshit/create-react-library/)
 
 ## License
