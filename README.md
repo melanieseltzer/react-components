@@ -20,6 +20,17 @@ npm install --save @mels/react-components
 
 https://mels-react-components.netlify.com
 
+## Components
+
+- Flex
+  - Flex Item
+- Form Elements
+  - Floating Label Input
+  - Input
+  - Label
+
+... more to come!
+
 ## Usage
 
 ```js
