@@ -1,14 +1,18 @@
-import React, { ReactNode } from 'react';
+import React, { Component, ReactNode } from 'react';
 import styled from 'styled-components';
 
-export interface Flex {
+import FlexItem from './FlexItem';
+
+export interface FlexProps {
   className?: string;
   children: ReactNode;
+  height?: string;
+  width?: string;
   background?: string;
   direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
   wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
   justifyContent?:
-    | 'flex-start '
+    | 'flex-start'
     | 'flex-end'
     | 'center'
     | 'space-between'
@@ -24,26 +28,35 @@ export interface Flex {
     | 'stretch';
 }
 
-const Flex = (props: Flex): JSX.Element => {
-  const { className, children } = props;
+class Flex extends Component<FlexProps> {
+  public static Item = FlexItem;
 
-  return (
-    <StyledFlex className={className} {...props}>
-      {children}
-    </StyledFlex>
-  );
-};
+  public render() {
+    const { props } = this;
+    const { className, children } = props;
+
+    return (
+      <FlexWrapper className={className} {...props}>
+        {children}
+      </FlexWrapper>
+    );
+  }
+}
 
 export default Flex;
 
-const StyledFlex = styled.div`
+const FlexWrapper = styled.div`
   display: flex;
-  ${(props: Flex) => props.background && `background: ${props.background}`}
-  ${(props: Flex) => props.direction && `flex-direction: ${props.direction}`}
-  ${(props: Flex) => props.wrap && `flex-wrap: ${props.wrap}`}
-  ${(props: Flex) =>
+  ${(props: FlexProps) => props.height && `height: ${props.height}`}
+  ${(props: FlexProps) => props.width && `width: ${props.width}`}
+  ${(props: FlexProps) => props.background && `background: ${props.background}`}
+  ${(props: FlexProps) =>
+    props.direction && `flex-direction: ${props.direction}`}
+  ${(props: FlexProps) => props.wrap && `flex-wrap: ${props.wrap}`}
+  ${(props: FlexProps) =>
     props.justifyContent && `justify-content: ${props.justifyContent}`}
-  ${(props: Flex) => props.alignItems && `align-items: ${props.alignItems}`}
-  ${(props: Flex) =>
+  ${(props: FlexProps) =>
+    props.alignItems && `align-items: ${props.alignItems}`}
+  ${(props: FlexProps) =>
     props.alignContent && `align-content: ${props.alignContent}`}
 `;
