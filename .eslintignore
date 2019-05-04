@@ -1,4 +1,0 @@
-src/**/*.test.js
-src/**/*.test.ts
-dist
-node_modules
