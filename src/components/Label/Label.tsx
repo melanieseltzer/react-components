@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 export interface Props extends React.InputHTMLAttributes<HTMLLabelElement> {
+  /** Pass it any class to extend styling. */
+  className?: string;
   color?: string;
   htmlFor?: string;
   width?: string;
-  /** float prop is passed from Floating and not meant to be used explicitely */
+  /** Passed from Floating and not meant to be used explicitely. */
   float?: boolean;
-  /** Pass it any class to extend styling */
-  className?: string;
 }
 
 const Label = (props: Props) => {

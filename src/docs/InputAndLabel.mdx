@@ -7,6 +7,7 @@ route: /input-label
 import { Playground, Props } from 'docz';
 import Input from '../components/Input/Input';
 import Label from '../components/Label/Label';
+import Flex from '../components/Flex/Flex';
 
 # Input and Label
 
@@ -45,19 +46,24 @@ Label above input:
 Label next to input:
 
 <Playground>
-  <form>
-    <Label className="custom-class" htmlFor="name2" color="tomato">
-      Name
-    </Label>
-    <Input
-      className="custom-class"
-      id="name2"
-      name="name2"
-      placeholder="John Smith"
-      color="tomato"
-      border={1}
-      borderBottom
-      // onChange={...}
-    />
-  </form>
+  <Flex justifyContent="space-around" alignItems="center">
+    <Flex.Item flex="1 1 10%">
+      <Label className="custom-class" htmlFor="name2" color="tomato">
+        Name
+      </Label>
+    </Flex.Item>
+    <Flex.Item flex="1 1 90%">
+      <Input
+        className="custom-class"
+        id="name2"
+        name="name2"
+        placeholder="John Smith"
+        color="tomato"
+        border={1}
+        borderBottom
+        width="100%"
+        // onChange={...}
+      />
+    </Flex.Item>
+  </Flex>
 </Playground>

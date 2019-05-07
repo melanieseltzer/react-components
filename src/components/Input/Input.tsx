@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+  /** Pass it any class to extend styling. */
+  className?: string;
   background?: string;
   border?: number;
   borderBottom?: boolean;
   color?: string;
   width?: string;
-  /** float prop is passed from Floating and not meant to be used explicitely */
+  /** Passed from Floating and not meant to be used explicitely. */
   float?: boolean;
-  /** Pass it any class to extend styling */
-  className?: string;
 }
 
 const Input = (props: Props) => {
@@ -36,16 +36,18 @@ const InputWrapper = styled.input`
     `border${props.borderBottom ? '-bottom' : ''}: ${props.border}px solid ${
       props.color
     }`};
+  font-size: 1rem;
+  height: 2rem;
   transition: all 0.2s;
   padding: ${(props: Props) =>
-    props.float ? '1rem 0.3rem 0.5rem 0.3rem' : '0.5rem'};
+    props.float ? '1rem 0.5rem 0.5rem 0.5rem' : '0.5rem'};
   ${(props: Props) => props.width && `width: ${props.width}`};
   ${(props: Props) =>
     props.float &&
     `
       /* normal label size (when placeholder is there but hidden aka not focused) */
       :placeholder-shown + label {
-        transform: translate(0.3rem, 0.5rem) scale(1);
+        transform: translate(0.7rem, 1.2rem) scale(1.2);
       }
       /* when not focused, hide the placeholder */
       :placeholder-shown:not(:focus)::placeholder,
@@ -64,7 +66,7 @@ const InputWrapper = styled.input`
       :focus + label {
         padding-top: 0.2rem;
         transform-origin: left top;
-        transform: translate(0.3rem, -0.2rem) scale(0.8);
+        transform: translate(0.5rem, 0rem) scale(1);
       }
     `}
 `;
