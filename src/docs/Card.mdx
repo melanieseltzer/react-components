@@ -1,0 +1,75 @@
+---
+name: Card
+menu: Components
+route: /card
+---
+
+import { Playground, Props } from 'docz';
+import Card from '../components/Card/Card';
+import Flex from '../components/Flex/Flex';
+
+# Card
+
+A super versatile Card component which is based on a Flex Item. Pass it any valid prop from Flex Item, in addition to a couple Card-specific props.
+
+## Props
+
+<Props of={Card} />
+
+## Usage
+
+### Default box-shadow
+
+<Playground>
+  <Flex>
+    <Card flex="1 1 20%" background="tomato">
+      Hi!
+    </Card>
+    <Card flex="1 1 20%" background="#fff">
+      Hi!
+    </Card>
+    <Card flex="1 1 20%" background="lightsalmon">
+      Hi!
+    </Card>
+  </Flex>
+</Playground>
+
+### Custom box-shadow
+
+<Playground>
+  <Card background="lightsalmon" boxShadow="0 2px 20px 0 lightsalmon">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce venenatis ut
+    sem sit amet ullamcorper. Donec sollicitudin aliquam nisi id convallis.
+    Proin quis felis lorem. Sed ac congue nisl, ut eleifend dui. Proin tempus
+    pharetra imperdiet. Proin id justo nec lectus facilisis maximus quis eget
+    mauris. Nunc et nibh orci.
+  </Card>
+</Playground>
+
+### Custom border-radius
+
+<Playground>
+  <Card borderRadius="0">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce venenatis ut
+    sem sit amet ullamcorper. Donec sollicitudin aliquam nisi id convallis.
+    Proin quis felis lorem. Sed ac congue nisl, ut eleifend dui. Proin tempus
+    pharetra imperdiet. Proin id justo nec lectus facilisis maximus quis eget
+    mauris. Nunc et nibh orci.
+  </Card>
+</Playground>
+
+### Flexible interior content
+
+<Playground>
+  <Card>
+    <h2>Subtitle</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce venenatis
+      ut sem sit amet ullamcorper. Donec sollicitudin aliquam nisi id convallis.
+      Proin quis felis lorem. Sed ac congue nisl, ut eleifend dui. Proin tempus
+      pharetra imperdiet. Proin id justo nec lectus facilisis maximus quis eget
+      mauris. Nunc et nibh orci.
+    </p>
+    <a href="https://github.com">GitHub</a>
+  </Card>
+</Playground>
