@@ -4,8 +4,10 @@ import styled from 'styled-components';
 import FlexItem from './FlexItem';
 
 export interface FlexProps {
-  className?: string;
+  /** Must pass it a child. */
   children: ReactNode;
+  /** Pass it any class to extend styling. */
+  className?: string;
   height?: string;
   width?: string;
   background?: string;

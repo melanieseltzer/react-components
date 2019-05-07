@@ -5,9 +5,9 @@ import Input from '../Input';
 import Label from '../Label';
 
 interface FloatingProps {
-  /** Takes an Input and Label as children */
+  /** Must pass it a child (Input and Label). */
   children: ReactNode;
-  /** Pass it any class to extend styling */
+  /** Pass it any class to extend styling. */
   className?: string;
 }
 
