@@ -7,10 +7,11 @@ export interface Props {
   height?: string;
   width?: string;
   background?: string;
+  flex?: string;
   order?: number;
   grow?: number;
   shrink?: number;
-  basis?: number | 'auto';
+  basis?: string;
   alignSelf?:
     | 'auto'
     | 'flex-start'
@@ -31,6 +32,7 @@ const FlexItem = (props: Props) => {
 };
 
 const StyledFlexItem = styled.div`
+  ${(props: Props) => props.flex && `flex: ${props.flex}`}
   ${(props: Props) => props.height && `height: ${props.height}`}
   ${(props: Props) => props.width && `width: ${props.width}`}
   ${(props: Props) => props.background && `background: ${props.background}`}
