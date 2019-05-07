@@ -1,7 +1,7 @@
 ---
-name: Input and Label
+name: Label
 menu: Components
-route: /input-label
+route: /label
 ---
 
 import { Playground, Props } from 'docz';
@@ -9,17 +9,11 @@ import Input from '../components/Input/Input';
 import Label from '../components/Label/Label';
 import Flex from '../components/Flex/Flex';
 
-# Input and Label
+# Label
 
-A label with an associated input.
+An HTML label component. Should be used with [Input](/input).
 
 ## Props
-
-### Input
-
-<Props of={Input} />
-
-### Label
 
 <Props of={Label} />
 
@@ -28,26 +22,30 @@ A label with an associated input.
 Label above input:
 
 <Playground>
-  <form>
-    <Label className="custom-class" htmlFor="name">
-      Name
-    </Label>
-    <Input
-      className="custom-class"
-      id="name"
-      name="name"
-      placeholder="John Smith"
-      width="100%"
-      border={1}
-    />
-  </form>
+  <Flex direction="column">
+    <Flex.Item>
+      <Label className="custom-class" htmlFor="name2">
+        Name
+      </Label>
+    </Flex.Item>
+    <Flex.Item>
+      <Input
+        className="custom-class"
+        id="name2"
+        name="name2"
+        placeholder="John Smith"
+        border={1}
+        width="100%"
+      />
+    </Flex.Item>
+  </Flex>
 </Playground>
 
 Label next to input:
 
 <Playground>
   <Flex justifyContent="space-around" alignItems="center">
-    <Flex.Item flex="1 1 10%">
+    <Flex.Item flex="1 1 5%">
       <Label className="custom-class" htmlFor="name2" color="tomato">
         Name
       </Label>
@@ -62,7 +60,6 @@ Label next to input:
         border={1}
         borderBottom
         width="100%"
-        // onChange={...}
       />
     </Flex.Item>
   </Flex>
