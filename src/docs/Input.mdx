@@ -1,0 +1,48 @@
+---
+name: Input
+menu: Components
+route: /input
+---
+
+import { Playground, Props } from 'docz';
+import Input from '../components/Input/Input';
+import Label from '../components/Label/Label';
+import Flex from '../components/Flex/Flex';
+
+# Input
+
+An HTML input component. Should be used with [Label](/label).
+
+## Props
+
+<Props of={Input} />
+
+## Basic usage
+
+Normal border:
+
+<Playground>
+  <Input
+    className="custom-class"
+    id="name"
+    name="name"
+    placeholder="John Smith"
+    width="100%"
+    border={1}
+  />
+</Playground>
+
+Border bottom:
+
+<Playground>
+  <Input
+    className="custom-class"
+    id="name2"
+    name="name2"
+    placeholder="John Smith"
+    color="tomato"
+    border={1}
+    borderBottom
+    width="100%"
+  />
+</Playground>

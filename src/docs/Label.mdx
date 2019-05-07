@@ -1,0 +1,66 @@
+---
+name: Label
+menu: Components
+route: /label
+---
+
+import { Playground, Props } from 'docz';
+import Input from '../components/Input/Input';
+import Label from '../components/Label/Label';
+import Flex from '../components/Flex/Flex';
+
+# Label
+
+An HTML label component. Should be used with [Input](/input).
+
+## Props
+
+<Props of={Label} />
+
+## Basic usage
+
+Label above input:
+
+<Playground>
+  <Flex direction="column">
+    <Flex.Item>
+      <Label className="custom-class" htmlFor="name2">
+        Name
+      </Label>
+    </Flex.Item>
+    <Flex.Item>
+      <Input
+        className="custom-class"
+        id="name2"
+        name="name2"
+        placeholder="John Smith"
+        border={1}
+        width="100%"
+      />
+    </Flex.Item>
+  </Flex>
+</Playground>
+
+Label next to input:
+
+<Playground>
+  <Flex justifyContent="space-around" alignItems="center">
+    <Flex.Item flex="1 1 5%">
+      <Label className="custom-class" htmlFor="name2" color="tomato">
+        Name
+      </Label>
+    </Flex.Item>
+    <Flex.Item flex="1 1 90%">
+      <Input
+        className="custom-class"
+        id="name2"
+        name="name2"
+        placeholder="John Smith"
+        color="tomato"
+        border={1}
+        borderBottom
+        width="100%"
+      />
+    </Flex.Item>
+  </Flex>
+</Playground>
