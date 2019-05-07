@@ -4,12 +4,19 @@ import styled from 'styled-components';
 import Flex from '../Flex';
 
 export interface Props {
-  /** Takes any sort of children */
+  /** Must pass it a child. */
   children: ReactNode;
-  /** Pass it any class to extend styling */
+  /** Pass it any class to extend styling. */
   className?: string;
-  /** Pass it a full box-shadow value like `0 10px 40px 0 rgba(64, 67, 109, 0.25)`, otherwise it will use the default style */
+  /**
+   * Pass it a valid box-shadow, otherwise default will be used.
+   * Default: `0 5px 35px rgba(64, 67, 109, 0.25)`
+   */
   boxShadow?: string;
+  /**
+   * Pass it a valid border-radius, otherwise default will be used.
+   * Default: `10px`
+   */
   borderRadius?: string;
 }
 
@@ -31,9 +38,13 @@ const CardWrapper = styled(Flex.Item)`
   padding: 1.25rem;
   margin: 1.25rem;
   transition: 0.2s all ease-out;
-  @media (min-width: 1025px) {
+  transform: scale(1);
+  &:hover {
+    transform: scale(1.08);
+  }
+  @media (hover: none) {
     &:hover {
-      transform: scale(1.02);
+      transform: scale(1);
     }
   }
 `;
