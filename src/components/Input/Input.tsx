@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   /** Pass it any class to extend styling. */
   className?: string;
   background?: string;
@@ -13,7 +14,7 @@ export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   float?: boolean;
 }
 
-const Input = (props: Props) => {
+const Input = (props: InputProps) => {
   const { color = '#ccc', border = 0, className } = props;
 
   return (
@@ -27,10 +28,10 @@ const Input = (props: Props) => {
 };
 
 const InputWrapper = styled.input`
-  background: ${(props: Props) =>
+  background: ${(props: InputProps) =>
     props.background ? props.background : 'none'};
   border: 0;
-  ${(props: Props) =>
+  ${(props: InputProps) =>
     props.border &&
     props.border > 0 &&
     `border${props.borderBottom ? '-bottom' : ''}: ${props.border}px solid ${
@@ -39,10 +40,10 @@ const InputWrapper = styled.input`
   font-size: 1rem;
   height: 2rem;
   transition: all 0.2s;
-  padding: ${(props: Props) =>
+  padding: ${(props: InputProps) =>
     props.float ? '1rem 0.5rem 0.5rem 0.5rem' : '0.5rem'};
-  ${(props: Props) => props.width && `width: ${props.width}`};
-  ${(props: Props) =>
+  ${(props: InputProps) => props.width && `width: ${props.width}`};
+  ${(props: InputProps) =>
     props.float &&
     `
       /* normal label size (when placeholder is there but hidden aka not focused) */

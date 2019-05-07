@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export interface Props extends React.InputHTMLAttributes<HTMLLabelElement> {
+export interface LabelProps
+  extends React.InputHTMLAttributes<HTMLLabelElement> {
   /** Pass it any class to extend styling. */
   className?: string;
   color?: string;
@@ -11,7 +12,7 @@ export interface Props extends React.InputHTMLAttributes<HTMLLabelElement> {
   float?: boolean;
 }
 
-const Label = (props: Props) => {
+const Label = (props: LabelProps) => {
   const { color = '#aaa', children, className } = props;
 
   return (
@@ -23,9 +24,9 @@ const Label = (props: Props) => {
 
 const LabelWrapper = styled.label`
   transition: all 0.2s;
-  color: ${(props: Props) => props.color};
+  color: ${(props: LabelProps) => props.color};
   /* Leverage props when used in context of floating label */
-  ${(props: Props) =>
+  ${(props: LabelProps) =>
     props.float &&
     `
       position: absolute;

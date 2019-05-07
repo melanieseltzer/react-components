@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Flex from '../Flex';
 
-export interface Props {
+export interface CardProps {
   /** Must pass it a child. */
   children: ReactNode;
   /** Pass it any class to extend styling. */
@@ -20,7 +20,7 @@ export interface Props {
   borderRadius?: string;
 }
 
-const Card = (props: Props) => {
+const Card = (props: CardProps) => {
   const { children, className } = props;
 
   return (
@@ -31,9 +31,9 @@ const Card = (props: Props) => {
 };
 
 const CardWrapper = styled(Flex.Item)`
-  box-shadow: ${(props: Props) =>
+  box-shadow: ${(props: CardProps) =>
     props.boxShadow ? props.boxShadow : `0 5px 35px rgba(64, 67, 109, 0.25)`};
-  border-radius: ${(props: Props) =>
+  border-radius: ${(props: CardProps) =>
     props.borderRadius ? props.borderRadius : `10px`};
   padding: 1.25rem;
   margin: 1.25rem;

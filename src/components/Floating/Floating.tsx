@@ -4,14 +4,14 @@ import styled from 'styled-components';
 import Input from '../Input';
 import Label from '../Label';
 
-export interface Props {
+interface FloatingProps {
   /** Takes an Input and Label as children */
   children: ReactNode;
   /** Pass it any class to extend styling */
   className?: string;
 }
 
-class Floating extends Component<Props> {
+class Floating extends Component<FloatingProps> {
   public static Input = Input;
   public static Label = Label;
 
