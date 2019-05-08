@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Flex from '../Flex';
@@ -19,6 +20,13 @@ export interface CardProps {
    */
   borderRadius?: string;
 }
+
+const Props = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  boxShadow: PropTypes.string,
+  borderRadius: PropTypes.string
+};
 
 const Card = (props: CardProps) => {
   const { children, className } = props;
@@ -48,5 +56,7 @@ const CardWrapper = styled(Flex.Item)`
     }
   }
 `;
+
+Card.propTypes = Props;
 
 export default Card;

@@ -1,4 +1,5 @@
 import React, { Component, ReactNode } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import FlexItem from './FlexItem';
@@ -31,6 +32,44 @@ export interface FlexProps {
 }
 
 class Flex extends Component<FlexProps> {
+  public static propTypes = {
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+    height: PropTypes.string,
+    width: PropTypes.string,
+    background: PropTypes.string,
+    direction: PropTypes.oneOf([
+      'row',
+      'row-reverse',
+      'column',
+      'column-reverse'
+    ]),
+    wrap: PropTypes.oneOf(['nowrap', 'wrap', 'wrap-reverse']),
+    justifyContent: PropTypes.oneOf([
+      'flex-start',
+      'flex-end',
+      'center',
+      'space-between',
+      'space-around',
+      'space-evenly'
+    ]),
+    alignItems: PropTypes.oneOf([
+      'stretch',
+      'flex-start',
+      'flex-end',
+      'center',
+      'baseline'
+    ]),
+    alignContent: PropTypes.oneOf([
+      'flex-start',
+      'flex-end',
+      'center',
+      'space-between',
+      'space-around',
+      'stretch'
+    ])
+  };
+
   public static Item = FlexItem;
 
   public render() {
