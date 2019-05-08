@@ -16,12 +16,14 @@ export interface InputProps
 }
 
 const Props = {
+  /** Pass it any class to extend styling. */
   className: PropTypes.string,
   background: PropTypes.string,
   border: PropTypes.number,
   borderBottom: PropTypes.bool,
   color: PropTypes.string,
   width: PropTypes.string,
+  /** Passed from Floating and not meant to be used explicitely. */
   float: PropTypes.bool
 };
 

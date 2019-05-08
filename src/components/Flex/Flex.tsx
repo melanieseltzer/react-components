@@ -33,7 +33,9 @@ export interface FlexProps {
 
 class Flex extends Component<FlexProps> {
   public static propTypes = {
+    /** Must pass it a child. */
     children: PropTypes.node.isRequired,
+    /** Pass it any class to extend styling. */
     className: PropTypes.string,
     height: PropTypes.string,
     width: PropTypes.string,

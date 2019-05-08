@@ -14,7 +14,9 @@ interface FloatingProps {
 
 class Floating extends Component<FloatingProps> {
   public static propTypes = {
+    /** Must pass it a child (Input and Label). */
     children: PropTypes.node.isRequired,
+    /** Pass it any class to extend styling. */
     className: PropTypes.string
   };
 

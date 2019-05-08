@@ -22,9 +22,19 @@ export interface CardProps {
 }
 
 const Props = {
+  /** Must pass it a child. */
   children: PropTypes.node.isRequired,
+  /** Pass it any class to extend styling. */
   className: PropTypes.string,
+  /**
+   * Pass it a valid box-shadow, otherwise default will be used.
+   * Default: `0 5px 35px rgba(64, 67, 109, 0.25)`
+   */
   boxShadow: PropTypes.string,
+  /**
+   * Pass it a valid border-radius, otherwise default will be used.
+   * Default: `10px`
+   */
   borderRadius: PropTypes.string
 };
 
