@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 export interface LabelProps
@@ -11,6 +12,14 @@ export interface LabelProps
   /** Passed from Floating and not meant to be used explicitely. */
   float?: boolean;
 }
+
+const Props = {
+  className: PropTypes.string,
+  color: PropTypes.string,
+  htmlFor: PropTypes.string,
+  width: PropTypes.string,
+  float: PropTypes.bool
+};
 
 const Label = (props: LabelProps) => {
   const { color = '#aaa', children, className } = props;
@@ -37,5 +46,7 @@ const LabelWrapper = styled.label`
       }
     `}
 `;
+
+Label.propTypes = Props;
 
 export default Label;

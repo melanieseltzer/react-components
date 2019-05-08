@@ -1,4 +1,5 @@
 import React, { Component, ReactNode } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Input from '../Input';
@@ -12,6 +13,11 @@ interface FloatingProps {
 }
 
 class Floating extends Component<FloatingProps> {
+  public static propTypes = {
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string
+  };
+
   public static Input = Input;
   public static Label = Label;
 

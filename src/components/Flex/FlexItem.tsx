@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 export interface FlexItemProps {
@@ -23,6 +24,27 @@ export interface FlexItemProps {
     | 'stretch';
 }
 
+const Props = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  height: PropTypes.string,
+  width: PropTypes.string,
+  background: PropTypes.string,
+  flex: PropTypes.string,
+  order: PropTypes.number,
+  grow: PropTypes.number,
+  shrink: PropTypes.number,
+  basis: PropTypes.string,
+  alignSelf: PropTypes.oneOf([
+    'auto',
+    'flex-start',
+    'flex-end',
+    'center',
+    'baseline',
+    'stretch'
+  ])
+};
+
 const FlexItem = (props: FlexItemProps) => {
   const { className, children } = props;
 
@@ -46,5 +68,7 @@ const StyledFlexItem = styled.div`
   ${(props: FlexItemProps) =>
     props.alignSelf && `align-self: ${props.alignSelf}`}
 `;
+
+FlexItem.propTypes = Props;
 
 export default FlexItem;

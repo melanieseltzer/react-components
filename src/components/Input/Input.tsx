@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 export interface InputProps
@@ -13,6 +14,16 @@ export interface InputProps
   /** Passed from Floating and not meant to be used explicitely. */
   float?: boolean;
 }
+
+const Props = {
+  className: PropTypes.string,
+  background: PropTypes.string,
+  border: PropTypes.number,
+  borderBottom: PropTypes.bool,
+  color: PropTypes.string,
+  width: PropTypes.string,
+  float: PropTypes.bool
+};
 
 const Input = (props: InputProps) => {
   const { color = '#ccc', border = 0, className } = props;
@@ -71,5 +82,7 @@ const InputWrapper = styled.input`
       }
     `}
 `;
+
+Input.propTypes = Props;
 
 export default Input;
