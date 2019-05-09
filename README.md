@@ -16,7 +16,7 @@ _NOTE: This is still a pretty early work in progress! Expect bugs and API change
 npm install --save @mels/react-components
 ```
 
-## Docz documentation
+## Documentation
 
 https://mels-react-components.netlify.com
 
