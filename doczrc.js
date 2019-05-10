@@ -17,11 +17,14 @@ export default {
         line-height: 1;
         p, a, h1, h2, h3, h4, table {
           line-height: 1.6;
+        },
+        .jaFFjD, .laeQwj {
+          align-items: center;
         }
       `
     },
     colors: {
-      primary: '#49AAEE'
+      primary: 'lightsalmon'
     },
     logo: {
       src: '/public/iconfinder_12-Computer_3213278.png',

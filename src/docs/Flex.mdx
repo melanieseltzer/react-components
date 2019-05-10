@@ -9,17 +9,17 @@ import Flex from '../components/Flex/Flex';
 
 # Flex
 
-An abstraction over a Flexbox 🚀 Defines a Flex parent (`Flex`) and a Flex child (`Flex.Item`). You should use `Flex.Item` with a parent `Flex` wrapping it.
+An abstraction over a Flexbox 🚀
+
+Defines a Flex container (`Flex`) and a Flex child (`Flex.Item`). You should use `Flex.Item` with a parent `Flex` wrapping it.
 
 Also comes with the ability to quickly pass a background color, width, or height.
 
-## Props
-
-### Flex
+## Flex
 
 <Props of={Flex} />
 
-### Flex Item
+## Flex Item
 
 <Props of={Flex.Item} />
 
@@ -27,18 +27,19 @@ Also comes with the ability to quickly pass a background color, width, or height
 
 <Playground>
   <Flex
-    background="green"
+    background="lightsalmon"
     height="200px"
+    width="100%"
     alignItems="center"
     justifyContent="space-between"
   >
-    <Flex.Item order={3} background="red">
+    <Flex.Item order={3} background="tomato">
       Hello!
     </Flex.Item>
-    <Flex.Item order={2} background="red">
+    <Flex.Item order={2} background="tomato">
       Because I'm cool.
     </Flex.Item>
-    <Flex.Item order={1} background="red">
+    <Flex.Item order={1} background="tomato">
       I should be first.
     </Flex.Item>
   </Flex>

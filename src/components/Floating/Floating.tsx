@@ -6,7 +6,7 @@ import Input from '../Input';
 import Label from '../Label';
 
 interface FloatingProps {
-  /** Must pass it a child (Input and Label). */
+  /** Must pass Input and Label as children. */
   children: ReactNode;
   /** Pass it any class to extend styling. */
   className?: string;
@@ -14,7 +14,7 @@ interface FloatingProps {
 
 class Floating extends Component<FloatingProps> {
   public static propTypes = {
-    /** Must pass it a child (Input and Label). */
+    /** Must pass Input and Label as children. */
     children: PropTypes.node.isRequired,
     /** Pass it any class to extend styling. */
     className: PropTypes.string

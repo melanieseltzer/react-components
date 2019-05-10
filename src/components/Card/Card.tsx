@@ -58,7 +58,7 @@ const CardWrapper = styled(Flex.Item)`
   transition: 0.2s all ease-out;
   transform: scale(1);
   &:hover {
-    transform: scale(1.08);
+    transform: scale(1.02);
   }
   @media (hover: none) {
     &:hover {
