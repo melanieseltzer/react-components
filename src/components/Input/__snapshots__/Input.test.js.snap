@@ -4,8 +4,7 @@ exports[`Input component matches the snapshot 1`] = `
 .c0 {
   background: none;
   border: 0;
-  font-size: 1rem;
-  height: 2rem;
+  font-size: 16px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   padding: 0.5rem;
