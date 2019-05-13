@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component matches the snapshot 1`] = `
+.c0 {
+  box-shadow: 0 5px 35px rgba(64,67,109,0.25);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin: 1.25rem;
+  -webkit-transition: 0.2s all ease-out;
+  transition: 0.2s all ease-out;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.c0:hover {
+  -webkit-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
+}
+
+@media (hover:none) {
+  .c0:hover {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+<div>
+  <div
+    class="c0 "
+  >
+    <div>
+      Hi
+    </div>
+  </div>
+</div>
+`;
