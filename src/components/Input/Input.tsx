@@ -50,8 +50,7 @@ const InputWrapper = styled.input`
     `border${props.borderBottom ? '-bottom' : ''}: ${props.border}px solid ${
       props.color
     }`};
-  font-size: 1rem;
-  height: 2rem;
+  font-size: 16px;
   transition: all 0.2s;
   padding: ${(props: InputProps) =>
     props.float ? '1rem 0.5rem 0.5rem 0.5rem' : '0.5rem'};
@@ -61,7 +60,7 @@ const InputWrapper = styled.input`
     `
       /* normal label size (when placeholder is there but hidden aka not focused) */
       :placeholder-shown + label {
-        transform: translate(0.7rem, 1.2rem) scale(1.2);
+        transform: translate(0.5rem, 0.8rem) scale(1);
       }
       /* when not focused, hide the placeholder */
       :placeholder-shown:not(:focus)::placeholder,
@@ -80,7 +79,7 @@ const InputWrapper = styled.input`
       :focus + label {
         padding-top: 0.2rem;
         transform-origin: left top;
-        transform: translate(0.5rem, 0rem) scale(1);
+        transform: translate(0.5rem, 0rem) scale(0.8);
       }
     `}
 `;
